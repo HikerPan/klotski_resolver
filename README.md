@@ -2,7 +2,7 @@
  * @Author: hikerpan 
  * @Date: 2023-02-20 15:44:17
  * @LastEditors: hikerpan
- * @LastEditTime: 2023-02-20 16:13:29
+ * @LastEditTime: 2023-02-20 16:18:32
  * @FilePath: \klotski_resolver\README.md
  * @Description: 
  * 
@@ -11,5 +11,5 @@
 
 # klotski_resolver
 
-# ÕâÊÇÒ»¸ö²âÊÔ
+# è¿™æ˜¯ä¸€ä¸ªæµ‹è¯•
 
