@@ -1,8 +1,19 @@
+/*
+ * @Author: hikerpan 
+ * @Date: 2023-02-20 15:40:05
+ * @LastEditors: hikerpan
+ * @LastEditTime: 2023-02-20 16:12:26
+ * @FilePath: \klotski_resolver\main.c
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by ${git_name}, All Rights Reserved. 
+ */
+
 #include "position.h"
 #include "queue.h"
 
 void bfs(POSITION root, int max_depth);
-
+ 
 int main()
 {
     POSITION root =
@@ -31,6 +42,12 @@ int main()
     return 0;
 }
 
+/**
+ * @description: 
+ * @param {POSITION} root
+ * @param {int} max_depth
+ * @return {*}
+ */
 void bfs(POSITION root, int max_depth)
 {
     QUEUE q = { NULL, -1, 0 };
