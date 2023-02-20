@@ -2,7 +2,7 @@
  * @Author: hikerpan 
  * @Date: 2023-02-20 15:44:17
  * @LastEditors: hikerpan
- * @LastEditTime: 2023-02-20 16:28:13
+ * @LastEditTime: 2023-02-20 17:23:14
  * @FilePath: \klotski_resolver\README.md
  * @Description: 
  * 
@@ -13,7 +13,7 @@
 
 # 项目目标
 
-- [] 将坐标系改为:
+- [x] 将坐标系改为:
   - X轴从左向右
   - Y轴从上向下
 - [] 增加特性，支持将和兵的数量随机
