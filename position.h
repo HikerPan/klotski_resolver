@@ -1,3 +1,14 @@
+/*
+ * @Author: hikerpan 
+ * @Date: 2023-02-20 15:40:05
+ * @LastEditors: hikerpan
+ * @LastEditTime: 2023-02-20 16:32:24
+ * @FilePath: \klotski_resolver\position.h
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by ${git_name}, All Rights Reserved. 
+ */
+
 #ifndef POSITION_H
 #define POSITION_H
 

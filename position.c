@@ -1,3 +1,13 @@
+/*
+ * @Author: hikerpan 
+ * @Date: 2023-02-20 15:40:05
+ * @LastEditors: hikerpan
+ * @LastEditTime: 2023-02-20 16:32:34
+ * @FilePath: \klotski_resolver\position.c
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by ${git_name}, All Rights Reserved. 
+ */
 #include "position.h"
 
 int is_block_in_piece(BLOCK b, PIECE *p)

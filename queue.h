@@ -1,3 +1,13 @@
+/*
+ * @Author: hikerpan 
+ * @Date: 2023-02-20 15:40:05
+ * @LastEditors: hikerpan
+ * @LastEditTime: 2023-02-20 16:31:52
+ * @FilePath: \klotski_resolver\queue.h
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by ${git_name}, All Rights Reserved. 
+ */
 #ifndef QUEUE_H
 #define QUEUE_H
 

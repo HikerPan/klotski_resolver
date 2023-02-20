@@ -2,7 +2,7 @@
  * @Author: hikerpan 
  * @Date: 2023-02-20 15:40:05
  * @LastEditors: hikerpan
- * @LastEditTime: 2023-02-20 16:12:26
+ * @LastEditTime: 2023-02-20 16:31:25
  * @FilePath: \klotski_resolver\main.c
  * @Description: 
  * 
