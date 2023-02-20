@@ -2,7 +2,7 @@
  * @Author: hikerpan 
  * @Date: 2023-02-20 15:40:05
  * @LastEditors: hikerpan
- * @LastEditTime: 2023-02-20 16:32:34
+ * @LastEditTime: 2023-02-20 17:18:24
  * @FilePath: \klotski_resolver\position.c
  * @Description: 
  * 
@@ -51,9 +51,14 @@ int can_move(POSITION *pos, PIECE *piece, BLOCK (*d) (BLOCK))
     return 1;
 }
 
+/**
+ * @description: 通过POSITION结构的pieces填充mat
+ * @param {POSITION} *pos
+ * @return {*}
+ */
 void matrix_from_pieces(POSITION *pos)
 {
-    int mat[BOARD_X][BOARD_Y] = {};
+    int mat[BOARD_Y][BOARD_X] = {};
 
     for(int i = 0; i < PIECES_IN_POSITION; i++)
     {
@@ -61,13 +66,13 @@ void matrix_from_pieces(POSITION *pos)
         for(int j = 0; j < p->n; j++)
         {
             BLOCK *b = &p->blocks[j];
-            mat[b->x][b->y] = p->mat_id;
+            mat[b->y][b->x] = p->mat_id;
         }
     }
 
-    for(int i = 0; i < BOARD_X; i++)
+    for(int i = 0; i < BOARD_Y; i++)
     {
-        for(int j = 0; j < BOARD_Y; j++)
+        for(int j = 0; j < BOARD_X; j++)
             pos->mat[i][j] = mat[i][j];
     }
 }
@@ -94,25 +99,25 @@ POSITION move_piece(POSITION *pos, PIECE *p, BLOCK (*d) (BLOCK))
 
 BLOCK up (BLOCK b)
 {
-    BLOCK tmp = {b.x - 1, b. y};
+    BLOCK tmp = {b.x, b. y -1};
     return tmp;
 }
 
 BLOCK down (BLOCK b)
 {
-    BLOCK tmp = {b.x + 1, b. y};
+    BLOCK tmp = {b.x, b. y+1};
     return tmp;
 }
 
 BLOCK left (BLOCK b)
 {
-    BLOCK tmp = {b.x,  b.y - 1};
+    BLOCK tmp = {b.x-1,  b.y};
     return tmp;
 }
 
 BLOCK right (BLOCK b)
 {
-    BLOCK tmp = {b.x, b. y + 1};
+    BLOCK tmp = {b.x+1, b. y};
     return tmp;
 }
 
@@ -147,13 +152,13 @@ POSITION * all_neighbours(POSITION *p, int *n)
     return arr;
 }
 
-unsigned char visited[MAX][BOARD_X][BOARD_Y];
+unsigned char visited[MAX][BOARD_Y][BOARD_X];
 int n_visited = 0;
 
 void add_to_visited(POSITION *pos)
 {
-    for(int i = 0; i < BOARD_X; i++)
-        for(int j = 0; j < BOARD_Y; j++)
+    for(int i = 0; i < BOARD_Y; i++)
+        for(int j = 0; j < BOARD_X; j++)
             visited[n_visited][i][j] = pos->mat[i][j];
     n_visited++;
 }
@@ -164,8 +169,8 @@ int is_visited(POSITION *pos)
     for(int i = 0; i < n_visited; i++)
     {
         equal = 1;
-        for(int j = 0; j < BOARD_X && equal; j++)
-            for(int k = 0; k < BOARD_Y && equal; k++)
+        for(int j = 0; j < BOARD_Y && equal; j++)
+            for(int k = 0; k < BOARD_X && equal; k++)
                 if(visited[i][j][k] != pos->mat[j][k])
                     equal = 0;
         if(equal)
@@ -176,9 +181,9 @@ int is_visited(POSITION *pos)
 
 void print_position(POSITION *pos)
 {
-    for(int i = 0; i < BOARD_X; i++)
+    for(int i = 0; i < BOARD_Y; i++)
     {
-        for(int j = 0; j < BOARD_Y; j++)
+        for(int j = 0; j < BOARD_X; j++)
             printf("%d ", pos->mat[i][j]);
         printf("\n");
     }
@@ -188,8 +193,8 @@ void print_position(POSITION *pos)
 
 int is_good(POSITION *pos)
 {
-    BLOCK b1 = {3, 1};
-    BLOCK b2 = {4, 2};
+    BLOCK b1 = {1, 3};
+    BLOCK b2 = {2, 4};
     if(is_block_in_piece(b1, &pos->pieces[1]) && is_block_in_piece(b2, &pos->pieces[1]))
         return 1;
 

@@ -18,8 +18,8 @@
 
 #define MAX 65536
 
-#define BOARD_X 5
-#define BOARD_Y 4
+#define BOARD_Y 5
+#define BOARD_X 4
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,7 +39,7 @@ typedef struct piece
 
 typedef struct position
 {
-    unsigned char mat[BOARD_X][BOARD_Y];
+    unsigned char mat[BOARD_Y][BOARD_X];
     PIECE pieces[PIECES_IN_POSITION];
     struct position *parent;
 } POSITION;
